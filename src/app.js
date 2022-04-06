@@ -1,14 +1,15 @@
-const fs = require("fs");
-const path = require("path");
-const express = require("express");
+import fs from 'fs';
+// const path = require("path");
+// const express = require("express");
+import express from 'express';
 const app = express();
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 // const user = require("./controller/user");
 // const log = require("./controller/log");
 // const auth = require("./controller/auth");
-const authUtils = require("./utils/auth");
+// const authUtils = require("./utils/auth");
 
 // function initDB() {
 //   mongoose.connect("mongodb://localhost:27017/storybook");
@@ -47,22 +48,22 @@ const authUtils = require("./utils/auth");
 // // target：目标地址
 // // app.use('/api', proxy({target: 'http://website.xxx.com', changeOrigin: true}));
 // initDB();
-app.all("*", function (req, res, next) {
-  //设置允许跨域的域名，*代表允许任意域名跨域
-  res.header("Access-Control-Allow-Origin", "*");
-  //允许的header类型
-  res.header("Access-Control-Allow-Headers", "content-type");
-  //跨域允许的请求方式
-  res.header("Access-Control-Allow-Methods", "DELETE,PUT,POST,GET,OPTIONS");
-  if (req.method.toLowerCase() === "options") res.send(200);
-  //让options尝试请求快速结束
-  else next();
-});
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(async function (req, res, next) {
+// app.all("*", function (req, res, next) {
+//   //设置允许跨域的域名，*代表允许任意域名跨域
+//   res.header("Access-Control-Allow-Origin", "*");
+//   //允许的header类型
+//   res.header("Access-Control-Allow-Headers", "content-type");
+//   //跨域允许的请求方式
+//   res.header("Access-Control-Allow-Methods", "DELETE,PUT,POST,GET,OPTIONS");
+//   if (req.method.toLowerCase() === "options") res.send(200);
+//   //让options尝试请求快速结束
+//   else next();
+// });
+// app.use(cookieParser());
+// app.use(bodyParser.json());
+// app.use(async function (req, res, next) {
   
-});
+// });
 // app.use("/api/user", user.router);
 // app.use("/api/log", log.router);
 // app.use("/api/auth", auth.router);
